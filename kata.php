@@ -1,19 +1,19 @@
 <?php 
   
-$size = readline('Enter password size (int): ');
+$size = readline('Enter password size (int > 1): ');
 
 
 $elements = array_merge(range('A', 'Z') , range('a', 'z') , ['1','2','3','4','5','6','7','8','9','0'] , ['!','@','#','$','%','^','&','*','(',')','{','}','[',']','=','<','>']);
 
-$password = array_rand( $elements, $size);
+$password_elements = array_rand( $elements, $size);
 
-$output = '';
+$password = '';
 
-foreach($password as $element) {
-    $output = $output . $elements[$element];
+foreach($password_elements as $element) {
+    $password .= $elements[$element];
 }
 
 
-echo "Your password is :" . $output;
+echo "Your password is: " . $password;
 
 ?>
